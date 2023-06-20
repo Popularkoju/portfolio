@@ -13,63 +13,67 @@ class FirstShow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (_) => aboutInfo(context, true),
+      mobile: (_) => Padding(
+        padding: const EdgeInsets.only(top: 8.0),
+        child: aboutInfo(context, true),
+      ),
       desktop: (_) {
         return Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: SpacePallete.paddingHorizontal),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: aboutInfo(context, false)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          border:
-                              Border.all(width: 3, color: Color(0xff25B1FF)),
-                          image: const DecorationImage(
-                              image: AssetImage(
-                                "assets/pp.jpg",
-                              ),
-                              fit: BoxFit.cover)),
-                      height: 500,
-                      width: 400,
-                    ),
-                    Positioned(
-                      top: 18,
-                      right: 18,
-                      child: Animate(
-                        child: Transform(
-                          transform: Matrix4.identity()
-                            ..rotateZ(-5 * 3.1415927 / 180),
-                          child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border:
-                                    Border.all(width: 3, color: Colors.white)),
-                            height: 500,
-                            width: 400,
-                          ),
+              padding:
+                  EdgeInsets.symmetric(horizontal: SpacePallete.paddingHorizontal),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: aboutInfo(context, false)),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 30.0),
+                    child: Stack(
+                      clipBehavior: Clip.none,
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(width: 3, color: Color(0xff25B1FF)),
+                              image: const DecorationImage(
+                                  image: AssetImage(
+                                    "assets/pp.jpg",
+                                  ),
+                                  fit: BoxFit.cover)),
+                          height: 500,
+                          width: 400,
                         ),
-                      ).fade(duration: 400.ms).shake(delay: 500.ms),
-                    )
-                  ],
-                ),
+                        Positioned(
+                          top: 18,
+                          right: 18,
+                          child: Animate(
+                            child: Transform(
+                              transform: Matrix4.identity()
+                                ..rotateZ(-5 * 3.1415927 / 180),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border:
+                                        Border.all(width: 3, color: Colors.white)),
+                                height: 500,
+                                width: 400,
+                              ),
+                            ),
+                          ).fade(duration: 400.ms).shake(delay: 500.ms),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            );
+          }
         );
-      },
-    );
+
   }
 
   Widget aboutInfo(BuildContext context, bool mobile) {

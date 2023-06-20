@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profile/Components/CustomTheme.dart';
 import 'package:profile/Screens/HomeScreen.dart';
-import 'package:profile/StateManagement/HoverManagement.dart';
+import 'package:profile/StateManagement/FunctionManagement.dart';
 import 'package:provider/provider.dart';
 
 import 'StateManagement/DataManagement.dart';
@@ -11,7 +11,7 @@ void main() {
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create:(_)=>DataManagement()),
-        ChangeNotifierProvider(create:(_)=>HoverManagement())
+        ChangeNotifierProvider(create:(_)=>FunctionalManagement())
       ],
       child: const MyApp()));
 }

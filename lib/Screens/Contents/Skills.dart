@@ -3,7 +3,7 @@ import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:profile/Screens/Contents/Widgets/TitleText.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
-import 'package:profile/StateManagement/HoverManagement.dart';
+import 'package:profile/StateManagement/FunctionManagement.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:provider/provider.dart';
@@ -48,12 +48,12 @@ class Skills extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16),
                           onTap: () {
                             if(mobile){
-                              context.read<HoverManagement>().selectedSkillsIndex = i;
+                              context.read<FunctionalManagement>().selectedSkillsIndex = i;
                             }
                           },
                           onHover: (hover) {
-                            context.read<HoverManagement>().hoverFunc(hover);
-                            context.read<HoverManagement>().selectedSkillsIndex = i;
+                            context.read<FunctionalManagement>().hoverFunc(hover);
+                            context.read<FunctionalManagement>().selectedSkillsIndex = i;
                           },
                           child: AnimatedContainer(
                             duration: Duration(milliseconds: 500),
@@ -61,15 +61,15 @@ class Skills extends StatelessWidget {
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
                               image: DecorationImage(image: AssetImage(context.read<DataManagement>().skills[i].image), ),
-                                color:  context.watch<HoverManagement>()
+                                color:  context.watch<FunctionalManagement>()
                                     .selectedSkillsIndex ==
                                     i &&
-                                    context.watch<HoverManagement>().isSkilledHover?Colors.black26:Colors.black12,
+                                    context.watch<FunctionalManagement>().isSkilledHover?Colors.black26:Colors.black12,
                                 borderRadius: BorderRadius.circular(16)),
-                            child:  context.watch<HoverManagement>()
+                            child:  context.watch<FunctionalManagement>()
                               .selectedSkillsIndex ==
                               i &&
-                              context.watch<HoverManagement>().isSkilledHover ?Align(
+                              context.watch<FunctionalManagement>().isSkilledHover ?Align(
                               alignment: Alignment.bottomCenter,
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
