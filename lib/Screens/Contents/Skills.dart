@@ -56,7 +56,7 @@ class Skills extends StatelessWidget {
                             context.read<FunctionalManagement>().selectedSkillsIndex = i;
                           },
                           child: AnimatedContainer(
-                            duration: Duration(milliseconds: 500),
+                            duration: const Duration(milliseconds: 500),
                             width:mobile?200:300,
                             alignment: Alignment.center,
                             decoration: BoxDecoration(
@@ -64,7 +64,7 @@ class Skills extends StatelessWidget {
                                 color:  context.watch<FunctionalManagement>()
                                     .selectedSkillsIndex ==
                                     i &&
-                                    context.watch<FunctionalManagement>().isSkilledHover?Colors.black26:Colors.black12,
+                                    context.watch<FunctionalManagement>().isSkilledHover?Colors.black87:Colors.black26,
                                 borderRadius: BorderRadius.circular(16)),
                             child:  context.watch<FunctionalManagement>()
                               .selectedSkillsIndex ==

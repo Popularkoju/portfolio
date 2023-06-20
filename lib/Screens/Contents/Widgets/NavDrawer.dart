@@ -17,32 +17,49 @@ class NavDrawer extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Positioned(child: Opacity(opacity:.1,child: Image.asset("assets/tech3.png"))),
-              DrawerHeader(
-                  child: Row(
-                    children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                    const  CircleAvatar(
-                          radius: 40,
-                          backgroundImage: AssetImage(
-                            "assets/smallpp.jpg",
-                          )),
-                      Text("Popular Koju", style: Theme.of(context).textTheme.headline2,),
-                ],
+              Positioned(
+                  child: Opacity(
+                      opacity: .1, child: Image.asset("assets/tech3.png"))),
+              GestureDetector(
+                onTap: () {
+                  context.read<FunctionalManagement>().scrollToIndex(0);
+                },
+                child: DrawerHeader(
+                    child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const CircleAvatar(
+                            radius: 40,
+                            backgroundImage: AssetImage(
+                              "assets/smallpp.jpg",
+                            )),
+                        Text(
+                          "Popular Koju",
+                          style: Theme.of(context).textTheme.headline2,
+                        ),
+                        Text(
+                          "Flutter Developer",
+                          style: Theme.of(context)
+                              .textTheme
+                              .headline5
+                              ?.copyWith(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                  ],
+                )),
               ),
-                    ],
-                  )),
             ],
           ),
           Flexible(
             child: ListView(
               children: [
-                NavDrawerItems(1, "About", context),
-                NavDrawerItems(2, "Projects", context),
-                NavDrawerItems(3, "Skills", context),
-                NavDrawerItems(4, "Contact", context),
+                navDrawerItems(1, "About", context),
+                navDrawerItems(2, "Projects", context),
+                navDrawerItems(3, "Skills", context),
+                navDrawerItems(4, "Contact", context),
               ],
             ),
           )
@@ -52,9 +69,12 @@ class NavDrawer extends StatelessWidget {
   }
 }
 
-Widget NavDrawerItems(int index, String title, BuildContext context) {
+Widget navDrawerItems(int index, String title, BuildContext context) {
   return ListTile(
-    title: Text(title,style: Theme.of(context).textTheme.headline4,),
+    title: Text(
+      title,
+      style: Theme.of(context).textTheme.headline4,
+    ),
     onTap: () {
       context.read<FunctionalManagement>().scrollToIndex(index);
       Scaffold.of(context).closeDrawer();
