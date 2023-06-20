@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:profile/Screens/Contents/Widgets/TitleText.dart';
@@ -6,7 +5,6 @@ import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:profile/StateManagement/FunctionManagement.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:provider/provider.dart';
 import '../../Components/SpacePallete.dart';
 
 class Skills extends StatelessWidget {

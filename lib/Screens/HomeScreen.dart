@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      drawer:NavDrawer(),
+      drawer:const NavDrawer(),
       // backgroundColor: const Color(0Xff084B66),
       body: Stack(
         alignment: Alignment.centerRight,

@@ -10,6 +10,7 @@ import '../Models/ProjectsModel.dart';
 import '../Models/SkillModel.dart';
 
 class DataManagement with ChangeNotifier, DiagnosticableTreeMixin{
+  List<String> navBarItemsName = ["About", "Projects", "Skills", "Contact"];
   List<SkillModel> skills = [
     SkillModel("Flutter", "assets/flutter.png"),
     SkillModel("Figma", "assets/figma.png"),

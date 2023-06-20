@@ -69,7 +69,7 @@ class AboutMe extends StatelessWidget {
                       child: Column(
                         children: [
                           infoText(
-                              "Hi, a passionate and dedicated developer specializing in creating innovative solutions. With a deep love for coding and problem-solving, I strive to deliver exceptional results that make a difference.",
+                              "I am a passionate and dedicated developer specializing in creating innovative solutions. With a deep love for coding and problem-solving, I strive to deliver exceptional results that make a difference.",
                               context),
                           const SizedBox(
                             height: 20,

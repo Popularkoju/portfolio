@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:profile/Screens/Contents/Widgets/NavBarItems.dart';
+import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
 import '../../../StateManagement/FunctionManagement.dart';
 
 class NavDrawer extends StatelessWidget {
@@ -56,10 +55,12 @@ class NavDrawer extends StatelessWidget {
           Flexible(
             child: ListView(
               children: [
-                navDrawerItems(1, "About", context),
-                navDrawerItems(2, "Projects", context),
-                navDrawerItems(3, "Skills", context),
-                navDrawerItems(4, "Contact", context),
+                ...context
+                    .read<DataManagement>()
+                    .navBarItemsName
+                    .asMap()
+                    .entries.map((e) => navDrawerItems(e.key+1, e.value, context)).toList()
+
               ],
             ),
           )
