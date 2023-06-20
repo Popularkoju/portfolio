@@ -10,21 +10,6 @@ import '../Models/ProjectsModel.dart';
 import '../Models/SkillModel.dart';
 
 class DataManagement with ChangeNotifier, DiagnosticableTreeMixin{
-  //
-  // String ?_selectedKey;
-  //
-  // String? get selectedKey => _selectedKey;
-  //
-  // Map<String, IconData> topicons = {
-  //   "About me": Icons.info,
-  //   "Profile": Icons.pest_control_rounded,
-  //   "Contact": Icons.call,
-  // };
-  //
-  // set selectedKey(String ?value) {
-  //   _selectedKey = value;
-  //   notifyListeners();
-  // }
 
   List<SkillModel> skills = [
     SkillModel("Flutter", "assets/flutter.png"),
