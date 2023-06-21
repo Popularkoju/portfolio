@@ -2,6 +2,10 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:profile/Screens/Contents/Widgets/Social.dart';
+import 'package:profile/StateManagement/DataManagement.dart';
+import 'package:profile/StateManagement/FunctionManagement.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../Components/Animations/TypewriterText.dart';
@@ -82,30 +86,35 @@ class FirstShow extends StatelessWidget {
       crossAxisAlignment:
           mobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
-        TypewriterText(
-          text: 'Hello,',
+        Text(
+          'Hello,',
         style: Theme.of(context).textTheme.headline2!,
-          duration: Duration(seconds: 2),
         ),
         const SizedBox(
           height: 12,
         ),
-        Text(
-          "I’ m Popular Koju",
+        TypewriterText(
+          duration:const Duration(seconds: 1),
+         text:  "I’ m Popular Koju",
           style: Theme.of(context)
               .textTheme
               .headline1
-              ?.copyWith(fontSize: 48, fontWeight: FontWeight.bold),
+              !.copyWith(fontSize: 48, fontWeight: FontWeight.bold),
         ),
         const SizedBox(
           height: 12,
         ),
+
         Text(
           "Mobile app developer | Flutter",
           style: Theme.of(context).textTheme.headline4?.copyWith(
                 color: const Color(0xffADADAD),
               ),
         ),
+        const SizedBox(
+          height: 28,
+        ),
+        const Social(),
         const SizedBox(
           height: 16,
         ),
@@ -122,6 +131,7 @@ class FirstShow extends StatelessWidget {
     anchorElement.download ="popular_koju_cv";
     anchorElement.click();
   }
+
 }
 
 // https://drive.google.com/file/d/1ejZO-_aJC5Lkrx1pTy4PyE4bkMfzhGjw/view

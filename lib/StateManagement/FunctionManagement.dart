@@ -1,7 +1,9 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
   bool isSkilledHover = false;
@@ -37,10 +39,16 @@ class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
     scrollController.scrollTo(
         index: index,
         duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInExpo
+        curve: Curves.easeInExpo);
+  }
 
-
-    );
+  Future<void> openURL(Uri url) async {
+    if (!await launchUrl(
+      url,
+      mode: LaunchMode.platformDefault,
+    )) {
+      throw Exception('Could not launch $url');
+    }
   }
 
   hoverFunc(bool hover) {
@@ -52,5 +60,23 @@ class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
     print(hover);
     isNavHover = hover;
     notifyListeners();
+  }
+
+  var textKey = GlobalKey();
+  double? textHeight;
+
+  calculateHeightOfText() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      final RenderBox box =
+          textKey.currentContext?.findRenderObject() as RenderBox;
+      if (box != null) {
+        textHeight = box.size.height +200;
+        notifyListeners();
+      }else{
+        textHeight=700;
+        notifyListeners();
+      }
+    });
+
   }
 }

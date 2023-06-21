@@ -74,23 +74,26 @@ class _NavBarState extends State<NavBar> {
                         .navBarItemsName
                         .asMap()
                         .entries
-                        .map((e) => MouseRegion(
-                              onExit: (v) {
-                                context
-                                    .read<FunctionalManagement>()
-                                    .isNavHover = false;
-                              },
-                              onEnter: (v) {
-                                context
-                                    .read<FunctionalManagement>()
-                                    .selectedNavIndex = e.key + 1;
-                                context
-                                    .read<FunctionalManagement>()
-                                    .isNavHover = true;
-                              },
-                              cursor: SystemMouseCursors.click,
-                              child: NavBarItems(e.key+1, e.value)
-                            ))
+                        .map((e) => Padding(
+                          padding: const EdgeInsets.only(left: 24.0),
+                          child: MouseRegion(
+                                onExit: (v) {
+                                  context
+                                      .read<FunctionalManagement>()
+                                      .isNavHover = false;
+                                },
+                                onEnter: (v) {
+                                  context
+                                      .read<FunctionalManagement>()
+                                      .selectedNavIndex = e.key + 1;
+                                  context
+                                      .read<FunctionalManagement>()
+                                      .isNavHover = true;
+                                },
+                                cursor: SystemMouseCursors.click,
+                                child: NavBarItems(e.key+1, e.value)
+                              ),
+                        ))
                         .toList()
                   ],
                 ),

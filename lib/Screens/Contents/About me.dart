@@ -1,12 +1,30 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:profile/Components/SpacePallete.dart';
+import 'package:profile/StateManagement/DataManagement.dart';
+import 'package:profile/StateManagement/FunctionManagement.dart';
+import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import 'Widgets/TitleText.dart';
 
-class AboutMe extends StatelessWidget {
+class AboutMe extends StatefulWidget {
   const AboutMe({Key? key}) : super(key: key);
+
+  @override
+  State<AboutMe> createState() => _AboutMeState();
+}
+
+class _AboutMeState extends State<AboutMe> {
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -17,85 +35,107 @@ class AboutMe extends StatelessWidget {
           children: [
             TitleText(title: "About Me"),
             infoText(
-                "Hi, a passionate and dedicated developer specializing in creating innovative solutions. With a deep love for coding and problem-solving, I strive to deliver exceptional results that make a difference.",
-                context),
-            const SizedBox(
-              height: 30,
-            ),
-            infoText(
-                "I possess a strong expertise in various programming languages and frameworks, enabling me to develop robust web applications and intuitive websites. Whether it's building dynamic e-commerce platforms, optimizing user experiences, or implementing cutting-edge technologies, I am committed to exceeding expectations",
-                context)
+                context.read<DataManagement>().aboutMe, context)
           ],
         ),
       ),
       desktop: (_) {
-        return Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: SpacePallete.paddingHorizontal),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              TitleText(title: "About Me"),
-              Stack(
-                clipBehavior: Clip.none,
-                // alignment: Alignment.center,
+
+        return Builder(
+          builder: (context) {
+            context.read<FunctionalManagement>().calculateHeightOfText();
+            return Padding(
+              padding:
+                  EdgeInsets.symmetric(horizontal: SpacePallete.paddingHorizontal),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(width: 3, color: Color(0xff25B1FF)),
-                    ),
-                    height: 500,
-                    width: double.infinity,
+                  TitleText(title: "About Me"),
+                  Stack(
+                    clipBehavior: Clip.none,
+                    // alignment: Alignment.center,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: const Color(0xff25B1FF)),
+                        ),
+                        height:context.watch<FunctionalManagement>().textHeight,
+                        width: double.infinity,
+                        // child: CarouselSlider.builder(
+                        //   itemCount: context.read<DataManagement>().aboutMe.length,
+                        //   itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
+                        //       Container(
+                        //         height: 700,
+                        //         width: 300,
+                        //         child: infoText(context.read<DataManagement>().aboutMe[itemIndex], context),
+                        //       ), options: CarouselOptions(autoPlay: true, scrollDirection: Axis.vertical),
+                        // ),
+                      ),
+                      Positioned(
+                          top: 66,
+                          // left: 0,
+                          right: 16,
+                          child: Transform(
+                            transform: new Matrix4.identity()
+                              ..rotateZ(-5.5 * 3.1415927 / 180),
+                            child: Container(
+                                decoration: BoxDecoration(
+                                    color: Colors.transparent,
+                                    border:
+                                        Border.all(width: 3, color: Colors.white)),
+                                height: context.watch<FunctionalManagement>().textHeight,
+                                width: MediaQuery.of(context).size.width - 240),
+                          )),
+                      Positioned(
+                          top: 100,
+                          left: 100,
+                          right: 100,
+                          child:
+                              // Container(
+                              //   color: Colors.blue,
+                              //   child: CarouselSlider.builder(
+                              //     itemCount: context.read<DataManagement>().aboutMe.length,
+                              //     itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
+                              //         Container(
+                              //           height: 500,
+                              //           child: infoText(context.read<DataManagement>().aboutMe[itemIndex], context),
+                              //         ), options: CarouselOptions(autoPlay: true, scrollDirection: Axis.vertical, aspectRatio:3/4 ),
+                              //   ),
+                              // )
+                              Column(
+                            children: [
+                              // ...context
+                              //     .read<DataManagement>()
+                              //     .aboutMe
+                              //     .map((e) => infoText(e.toString(), context))
+                              //     .toList(),
+                              infoText(
+                                  context.read<DataManagement>().aboutMe, context)
+                            ],
+                          )),
+                    ],
                   ),
-                  Positioned(
-                      top: 66,
-                      // left: 0,
-                      right: 16,
-                      child: Transform(
-                        transform: new Matrix4.identity()
-                          ..rotateZ(-5.5 * 3.1415927 / 180),
-                        child: Container(
-                            decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                border:
-                                    Border.all(width: 3, color: Colors.white)),
-                            height: 500,
-                            width: MediaQuery.of(context).size.width - 240),
-                      )),
-                  Positioned(
-                      top: 100,
-                      left: 100,
-                      right: 100,
-                      child: Column(
-                        children: [
-                          infoText(
-                              "I am a passionate and dedicated developer specializing in creating innovative solutions. With a deep love for coding and problem-solving, I strive to deliver exceptional results that make a difference.",
-                              context),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          infoText(
-                              "I possess a strong expertise in various programming languages and frameworks, enabling me to develop robust web applications and intuitive websites. Whether it's building dynamic e-commerce platforms, optimizing user experiences, or implementing cutting-edge technologies, I am committed to exceeding expectations",
-                              context)
-                        ],
-                      )),
+                  const SizedBox(
+                    height: 100,
+                  ),
                 ],
               ),
-              const SizedBox(
-                height: 100,
-              ),
-            ],
-          ),
+            );
+          }
         );
       },
     );
   }
 
   Widget infoText(String text, BuildContext context) {
-    return Text(
-      text,
-      textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.headline3,
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12.0),
+      child: Text(
+        key: context.read<FunctionalManagement>().textKey,
+        text,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.headline3,
+      ),
     );
   }
 }

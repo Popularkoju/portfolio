@@ -16,27 +16,23 @@ class NavBarItems extends StatelessWidget {
             .read<FunctionalManagement>()
             .scrollToIndex(index);
       },
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-            horizontal: 12.0),
-        child: Text(
-          title,
-          style: Theme.of(context)
-              .textTheme
-              .headline3
-              ?.copyWith(
-            fontSize: context
-                .watch<
-                FunctionalManagement>()
-                .selectedNavIndex ==
-                index &&
-                context
-                    .watch<
-                    FunctionalManagement>()
-                    .isNavHover
-                ? 30
-                : null,
-          ),
+      child: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .headline3
+            ?.copyWith(
+          fontSize: context
+              .watch<
+              FunctionalManagement>()
+              .selectedNavIndex ==
+              index &&
+              context
+                  .watch<
+                  FunctionalManagement>()
+                  .isNavHover
+              ? 30
+              : null,
         ),
       ),
     );
