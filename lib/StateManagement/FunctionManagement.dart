@@ -37,7 +37,10 @@ class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
     scrollController.scrollTo(
         index: index,
         duration: const Duration(milliseconds: 500),
-        curve: Curves.linear);
+        curve: Curves.easeInExpo
+
+
+    );
   }
 
   hoverFunc(bool hover) {
