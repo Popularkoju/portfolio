@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import '../../Components/Animations/TypewriterText.dart';
 import '../../Components/ButtonOutline.dart';
 import '../../Components/SpacePallete.dart';
 
@@ -81,9 +82,10 @@ class FirstShow extends StatelessWidget {
       crossAxisAlignment:
           mobile ? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
-        Text(
-          "Hello,",
-          style: Theme.of(context).textTheme.headline2,
+        TypewriterText(
+          text: 'Hello,',
+        style: Theme.of(context).textTheme.headline2!,
+          duration: Duration(seconds: 2),
         ),
         const SizedBox(
           height: 12,

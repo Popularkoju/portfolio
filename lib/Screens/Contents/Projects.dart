@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:profile/Models/ProjectsModel.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
@@ -51,24 +52,26 @@ class ProjectsContains extends StatelessWidget {
                 .map((e) => Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Align(
-                            alignment: e.key % 2 != 0
-                                ? Alignment.centerRight
-                                : Alignment.centerLeft,
-                            child: Text(
-                              e.key < 9
-                                  ? "0${e.key + 1}"
-                                  : (e.key + 1).toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline1
-                                  ?.copyWith(
-                                      color: Color(0xff3D6267),
-                                      fontWeight: FontWeight.bold),
-                            )),
+                        Animate(
+                          child: Align(
+                              alignment: e.key % 2 != 0
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                              child: Text(
+                                e.key < 9
+                                    ? "0${e.key + 1}"
+                                    : (e.key + 1).toString(),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline1
+                                    ?.copyWith(
+                                        color: Color(0xff3D6267),
+                                        fontWeight: FontWeight.bold),
+                              )),
+                        ),
                         Container(
                           padding: const EdgeInsets.all(16),
-                          margin: EdgeInsets.only(bottom: 48),
+                          margin: const EdgeInsets.only(bottom: 48),
                           decoration: BoxDecoration(
                               border: Border.all(
                                   width: 2, color: Color(0xff25B1FF))),
