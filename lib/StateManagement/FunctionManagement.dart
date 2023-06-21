@@ -57,7 +57,6 @@ class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
   }
 
   hoverFuncNav(bool hover) {
-    print(hover);
     isNavHover = hover;
     notifyListeners();
   }

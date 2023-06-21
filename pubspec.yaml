@@ -36,7 +36,6 @@ dependencies:
   responsive_builder: ^0.7.0
   scrollable_positioned_list: ^0.3.8
   url_launcher: ^6.1.11
-  carousel_slider: ^4.2.1
 
 
   # The following adds the Cupertino Icons font to your application.

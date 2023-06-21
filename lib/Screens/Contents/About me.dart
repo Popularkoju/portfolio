@@ -1,6 +1,4 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:profile/Components/SpacePallete.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:profile/StateManagement/FunctionManagement.dart';
