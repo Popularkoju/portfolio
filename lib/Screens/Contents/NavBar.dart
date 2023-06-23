@@ -1,12 +1,10 @@
-import 'package:flutter/gestures.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:profile/Screens/Contents/Widgets/NavBarItems.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:profile/StateManagement/FunctionManagement.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../Components/SpacePallete.dart';
 

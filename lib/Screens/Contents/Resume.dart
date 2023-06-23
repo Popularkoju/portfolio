@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:profile/Components/ButtonOutline.dart';
-
 import '../../Components/SpacePallete.dart';
 
 class Resume extends StatelessWidget {

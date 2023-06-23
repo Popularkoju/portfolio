@@ -1,8 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-
-import 'ColorPallete.dart';
 
 
 class AppButtonOutline extends StatelessWidget {
@@ -27,32 +24,6 @@ class AppButtonOutline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var style = OutlinedButton.styleFrom(
-      side: BorderSide(
-          width: 1,
-          color: isDisabled ? Colors.grey : Colors.white),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(borderRadius),
-      ),
-    );
-    if (width != null && height != null) {
-      style = OutlinedButton.styleFrom(
-        side: BorderSide(
-          width: 1,
-          color: isDisabled ? Colors.grey :ColorPalette.primaryColor,
-        ),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius),
-        ),
-      ).copyWith(
-        minimumSize: MaterialStateProperty.resolveWith(
-          (states) => Size(
-            width!,
-            height!,
-          ),
-        ),
-      );
-    }
     return Container(
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(

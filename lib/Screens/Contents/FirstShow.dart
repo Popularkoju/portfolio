@@ -3,11 +3,7 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:profile/Screens/Contents/Widgets/Social.dart';
-import 'package:profile/StateManagement/DataManagement.dart';
-import 'package:profile/StateManagement/FunctionManagement.dart';
-import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import '../../Components/Animations/TypewriterText.dart';
 import '../../Components/ButtonOutline.dart';
 import '../../Components/SpacePallete.dart';

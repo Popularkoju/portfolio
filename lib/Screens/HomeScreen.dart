@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:profile/Screens/Contents/Widgets/NavDrawer.dart';
-import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
-
+import '../StateManagement/FunctionManagement.dart';
 import 'Contents/LandingPage.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,14 +17,6 @@ class _HomeScreenState extends State<HomeScreen> {
   ItemScrollController controller = ItemScrollController();
   double scrollPosition = 0.0;
 
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    // controller.addListener(() {
-    // });
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {

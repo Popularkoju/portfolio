@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:profile/Components/ColorPallete.dart';
-import 'package:profile/Screens/Contents/Widgets/NavBarItems.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
 import '../../../StateManagement/FunctionManagement.dart';

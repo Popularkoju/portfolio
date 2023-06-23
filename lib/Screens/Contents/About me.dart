@@ -16,16 +16,9 @@ class AboutMe extends StatefulWidget {
 
 class _AboutMeState extends State<AboutMe> {
 
-
-  @override
-  void initState() {
-    // TODO: implement initState
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
+    context.read<FunctionalManagement>().calculateHeightOfText();
     return ScreenTypeLayout.builder(
       mobile: (_) => Padding(
         padding: const EdgeInsets.symmetric(vertical: 34.0),
@@ -38,10 +31,6 @@ class _AboutMeState extends State<AboutMe> {
         ),
       ),
       desktop: (_) {
-
-        return Builder(
-          builder: (context) {
-            context.read<FunctionalManagement>().calculateHeightOfText();
             return Padding(
               padding:
                   EdgeInsets.symmetric(horizontal: SpacePallete.paddingHorizontal),
@@ -63,15 +52,7 @@ class _AboutMeState extends State<AboutMe> {
                         ),
                         height:context.watch<FunctionalManagement>().textHeight,
                         width: double.infinity,
-                        // child: CarouselSlider.builder(
-                        //   itemCount: context.read<DataManagement>().aboutMe.length,
-                        //   itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-                        //       Container(
-                        //         height: 700,
-                        //         width: 300,
-                        //         child: infoText(context.read<DataManagement>().aboutMe[itemIndex], context),
-                        //       ), options: CarouselOptions(autoPlay: true, scrollDirection: Axis.vertical),
-                        // ),
+
                       ),
                       Positioned(
                           top: 66,
@@ -125,8 +106,7 @@ class _AboutMeState extends State<AboutMe> {
             );
           }
         );
-      },
-    );
+
   }
 
   Widget infoText(String text, BuildContext context) {

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:profile/Components/SpacePallete.dart';
 
 class TitleText extends StatelessWidget {
-  String title;
+  final String title;
   TitleText({required this.title,Key? key}) : super(key: key);
 
   @override

@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
-import 'package:profile/Models/ProjectsModel.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
 import '../../Components/SpacePallete.dart';
 import 'Widgets/TitleText.dart';
 
@@ -27,10 +24,9 @@ class ProjectScreen extends StatelessWidget {
 }
 
 class ProjectsContains extends StatelessWidget {
-  // List<ProjectModel> projectData;
-  bool mobile;
-  double imgHeight;
-  double imgWidth;
+ final bool mobile;
+ final double imgHeight;
+ final double imgWidth;
 
   ProjectsContains({required this.imgHeight, required this.imgWidth, required this.mobile,Key? key})
       : super(key: key);
