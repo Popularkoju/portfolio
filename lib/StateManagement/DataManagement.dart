@@ -29,6 +29,11 @@ class DataManagement with ChangeNotifier, DiagnosticableTreeMixin {
         description:
             "Part of  Faasto app for distributors for the Order acceptance, order confirmation, billing, and order delivery. The user's assigned roles facilitate quick access to their particular task.  "),
     ProjectModel(
+        image: "assets/fuser.png",
+        title: "Fuser",
+        description:
+        "Flutter based mobile app for Field representatives for collecting outlet's order(offline and online) with billing system, orders history, offline to FR(Field Representatives) for FMCG company."),
+    ProjectModel(
         image: "assets/beat.jpg",
         title: "Beat Management",
         description:

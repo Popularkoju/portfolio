@@ -66,9 +66,9 @@ class FunctionalManagement with ChangeNotifier, DiagnosticableTreeMixin {
 
   calculateHeightOfText() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      final RenderBox box =
+      final RenderBox  box =
           textKey.currentContext?.findRenderObject() as RenderBox;
-      if (box != null) {
+      if (box.size != null) {
         textHeight = box.size.height +200;
         notifyListeners();
       }else{

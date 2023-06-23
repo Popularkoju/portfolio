@@ -55,6 +55,10 @@ class _AboutMeState extends State<AboutMe> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
+                          gradient: const RadialGradient(
+                    colors: [Colors.black54, Colors.black26],
+                    radius: 0.75,
+                  ),
                           border: Border.all(width: 3, color: const Color(0xff25B1FF)),
                         ),
                         height:context.watch<FunctionalManagement>().textHeight,

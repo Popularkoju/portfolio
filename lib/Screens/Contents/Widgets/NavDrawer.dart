@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile/Components/ColorPallete.dart';
 import 'package:profile/Screens/Contents/Widgets/NavBarItems.dart';
 import 'package:profile/StateManagement/DataManagement.dart';
 import 'package:provider/provider.dart';
@@ -10,7 +11,7 @@ class NavDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: const Color(0Xff084B66),
+      backgroundColor: ColorPalette.darkContainerColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [

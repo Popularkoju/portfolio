@@ -119,7 +119,7 @@ class FirstShow extends StatelessWidget {
           height: 16,
         ),
         AppButtonOutline(onPressedFunction: () async {
-          await downloadPdf("https://drive.google.com/uc?export=download&id=1ejZO-_aJC5Lkrx1pTy4PyE4bkMfzhGjw");
+          await downloadPdf("https://drive.google.com/uc?export=download&id=1sPhxEqNVYMcOO-iFwkIJ5KsdXfCuf4wO");
         }, text: "Download CV")
 
       ],
@@ -134,5 +134,6 @@ class FirstShow extends StatelessWidget {
 
 }
 
+// https://drive.google.com/file/d/1sPhxEqNVYMcOO-iFwkIJ5KsdXfCuf4wO/view?usp=drive_link
 // https://drive.google.com/file/d/1ejZO-_aJC5Lkrx1pTy4PyE4bkMfzhGjw/view
 // https://drive.google.com/uc?export=download&id=1ejZO-_aJC5Lkrx1pTy4PyE4bkMfzhGjw
