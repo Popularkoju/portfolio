@@ -21,7 +21,7 @@ class _AboutMeState extends State<AboutMe> {
     context.read<FunctionalManagement>().calculateHeightOfText();
     return ScreenTypeLayout.builder(
       mobile: (_) => Padding(
-        padding: const EdgeInsets.symmetric(vertical: 34.0),
+        padding: const EdgeInsets.symmetric(vertical: 34.0, horizontal: 100),
         child: Column(
           children: [
             TitleText(title: "About Me"),
@@ -51,7 +51,7 @@ class _AboutMeState extends State<AboutMe> {
                           border: Border.all(width: 3, color: const Color(0xff25B1FF)),
                         ),
                         height:context.watch<FunctionalManagement>().textHeight,
-                        width: double.infinity,
+                        width: double.infinity - 300,
 
                       ),
                       Positioned(
@@ -67,7 +67,7 @@ class _AboutMeState extends State<AboutMe> {
                                     border:
                                         Border.all(width: 3, color: Colors.white)),
                                 height: context.watch<FunctionalManagement>().textHeight,
-                                width: MediaQuery.of(context).size.width - 240),
+                                width: MediaQuery.of(context).size.width - 600),
                           )),
                       Positioned(
                           top: 100,

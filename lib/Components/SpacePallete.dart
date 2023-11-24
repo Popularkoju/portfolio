@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SpacePallete {
-  static double paddingHorizontal = 120.0;
+  static double paddingHorizontal = 300.0;
   static SizedBox get gapBetweenTopic => const SizedBox(height: 100, width: 100);
   static SizedBox get spaceLargest => const SizedBox(height: 32, width: 32);
 

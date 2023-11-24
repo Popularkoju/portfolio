@@ -18,6 +18,7 @@ class FirstShow extends StatelessWidget {
         padding: const EdgeInsets.only(top: 8.0),
         child: aboutInfo(context, true),
       ),
+      tablet: (_)=> Container(),
       desktop: (_) {
         return Padding(
               padding:

@@ -93,7 +93,7 @@ class Contacts extends StatelessWidget {
                     children: [
                       Icon(Icons.email),
                       SpacePallete.spaceMedium,
-                      Text("popular@gmail.com", style: Theme
+                      Text("popularkoju@gmail.com", style: Theme
                           .of(context)
                           .textTheme
                           .headline5,),
