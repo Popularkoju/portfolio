@@ -59,7 +59,7 @@ class _AboutMeState extends State<AboutMe> {
                           // left: 0,
                           right: 16,
                           child: Transform(
-                            transform: new Matrix4.identity()
+                            transform:  Matrix4.identity()
                               ..rotateZ(-5.5 * 3.1415927 / 180),
                             child: Container(
                                 decoration: BoxDecoration(
@@ -67,7 +67,7 @@ class _AboutMeState extends State<AboutMe> {
                                     border:
                                         Border.all(width: 3, color: Colors.white)),
                                 height: context.watch<FunctionalManagement>().textHeight,
-                                width: MediaQuery.of(context).size.width - 600),
+                                width: MediaQuery.of(context).size.width - 240),
                           )),
                       Positioned(
                           top: 100,
